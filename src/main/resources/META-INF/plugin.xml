@@ -1,18 +1,17 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.mijamarko.apiforge</id>
-    <name>apiforge Template</name>
+    <name>API Forge</name>
     <vendor>mijamarko</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+             Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+             Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description> Fast API development and data mocking for your Spring Boot applications. Make requests right from IntelliJ Idea </description>
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.mijamarko.apiforge.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow factoryClass="com.github.mijamarko.apiforge.window.MainWindowFactory" id="API Forge"/>
+        <postStartupActivity implementation="com.github.mijamarko.apiforge.activities.ProjectOpenedActivity"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.mijamarko.apiforge.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
