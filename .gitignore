@@ -5,3 +5,6 @@ build
 *.iml
 *.crt
 *.pem
+*.ipr
+*.iws
+.forge
