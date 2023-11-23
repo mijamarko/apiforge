@@ -73,6 +73,10 @@ tasks {
         gradleVersion = properties("gradleVersion").get()
     }
 
+    runIde {
+        autoReloadPlugins = true
+    }
+
 //    patchPluginXml {
 //        version = properties("pluginVersion")
 //        sinceBuild = properties("pluginSinceBuild")
