@@ -6,14 +6,19 @@ class Controller(path: String) {
 
     val endpoints = HashMap<String, Endpoint>()
 
-    class Endpoint(path: String, requestType: HTTPMethod, transferMethod: TransferMethod) {
+    class Endpoint {
+        lateinit var path: String
+        lateinit var requestMethod: HTTPMethod
 
-        val params = HashMap<String, TransferMethodParam>()
+        val params = ArrayList<HttpRequestParam>()
 
-        class TransferMethodParam(type: Any, value: Any) {}
+        class HttpRequestParam(val name: String, val type: HttpRequestParamType) {
+            val paramDef = HashMap<String, HttpRequestParamSchema>()
+        }
+        class HttpRequestParamSchema(type: Any, value: Any) {}
     }
 
-    enum class TransferMethod(name: String) {
+    enum class HttpRequestParamType(name: String) {
         REQUEST_BODY("RequestBody"),
         PATH_VARIABLE("PathVariable"),
         REQUEST_PARAMS("RequestParams")

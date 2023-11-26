@@ -11,7 +11,6 @@ internal class ProjectOpenedActivity : StartupActivity {
     override fun runActivity(project: Project) {
         val controllerService = project.service<ControllerService>()
         controllerService.loadService(project)
-
     }
 
 }

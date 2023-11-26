@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Plugin" type="GradleRunConfiguration" factoryName="Gradle">
+    <output_file path="$PROJECT_DIR$/controller.log" is_save="true" />
     <log_file alias="idea.log" path="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" />
     <ExternalSystemSettings>
       <option name="env">
